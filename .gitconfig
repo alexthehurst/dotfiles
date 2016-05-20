@@ -1,0 +1,9 @@
+[user]
+	name = Alex Hurst
+	email = ahurst@illuminateed.net
+[core]
+	excludesfile = ~/.gitignore_global
+[push]
+	default = simple
+[commit]
+	template = ~/.git_commit_template.txt
