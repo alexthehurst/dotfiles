@@ -1,5 +1,15 @@
+# Python
+$.pyc
+
+# Undo/temporary files
 *~
-.DS_Store
 *.un~
 *.swp
 *.swo
+
+# OS X temporary/cache files
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+

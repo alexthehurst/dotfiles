@@ -1,0 +1,12 @@
+# Smart history searching
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+# Vi-style readline editing
+set -o vi
+
+# If there are multiple possible completions, just show them (no bell)
+set show-all-if-ambiguous on
+
+# Disregard case when doing completion
+set completion-ignore-case on

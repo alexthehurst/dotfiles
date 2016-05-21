@@ -1,0 +1,31 @@
+alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
+alias copy="pbcopy < "
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+# ripped from zacharyrankin
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+# Shortcuts
+alias g="git"
+
+# update everything
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
+
+alias d="~/Diary.py/diary.py"
+alias ls='ls --color=auto'
+alias ll='ls -ahlF'
+alias st='open -a Sublime\ Text'
+alias please='sudo `fc -nl -1`'
+alias psg="ps -aSx | grep -i "
+alias copy="pbcopy < "
+
+alias cp="cp --backup=numbered"
+alias rm="rm -i"
+
+# Create a new directory and enter it
+function mkd() { mkdir -p "$@" && cd "$@"; }
+
