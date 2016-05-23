@@ -23,8 +23,9 @@ alias please='sudo `fc -nl -1`'
 alias psg="ps -aSx | grep -i "
 alias copy="pbcopy < "
 
-alias cp="cp --backup=numbered"
+# Safety in file operations
 alias rm="rm -i"
+alias cp="cp -i"
 
 # Create a new directory and enter it
 function mkd() { mkdir -p "$@" && cd "$@"; }
