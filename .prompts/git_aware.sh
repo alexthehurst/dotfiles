@@ -10,6 +10,9 @@ fi;
 prompt_git() {
 	local s='';
 	local branchName='';
+    local branchColor=$1;
+    local statusColor=$2;
+    local wipColor=$3;
 
 	# Check if the current directory is in a Git repository.
 	if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
@@ -51,7 +54,12 @@ prompt_git() {
 
 		[ -n "${s}" ] && s=" [${s}]";
 
-		echo -e "${1}${branchName}${2}${s}";
+        # If the current repository is in WIP state, display a badge to that effect
+		WIP="$(git log -n 1 | grep -q -c "\-\-wip\-\-" && echo 'WIP')";
+
+		[ -n "${WIP}" ] && WIP=" [${WIP}]";
+
+		echo -e "${branchColor}${branchName}${statusColor}${s}${wipColor}${WIP}";
 	else
 		return;
 	fi;
@@ -114,14 +122,14 @@ fi;
 PS1="\[\033]0;\w\007\]"; # working directory base name
 PS1+="\[${reset}\]"; # newline
 PS1+="\[${userStyle}\]\u"; # username
-PS1+="\[${white}\]@";
+PS1+="\[${white}\]@"; # @
 PS1+="\[${hostStyle}\]\h"; # host
-PS1+="\[${white}\] in ";
+PS1+="\[${white}\] in "; # in 
 
 # PS1+="\[${green}\]\W"; # working directory full path
-PS1+='\[${green}\]$(eval "last_pwd_parts 4")';
+PS1+='\[${green}\]$(eval "last_pwd_parts 4")'; # shortened path
 
-PS1+="\$(prompt_git \"\[${white}\] \[${violet}\](\" \")\[${blue}\]\")"; # Git repository details
+PS1+="\$(prompt_git \"\[${white}\] \[${violet}\](\" \")\[${blue}\]\" \"\[${yellow}\]\" )"; # Git repository details
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
