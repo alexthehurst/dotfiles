@@ -1,1 +1,2 @@
-source ~/.prompts/git_aware.sh
+# source ~/.prompts/classic.sh
+source ~/.prompts/ahurst_git_wrapping.sh
