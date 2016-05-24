@@ -15,7 +15,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias d="~/Diary.py/diary.py"
 alias ls='ls --color=auto'
 alias ll='ls -ahlF'
-alias st='open -a Sublime\ Text'
+alias subl='open -a Sublime\ Text'
 alias please='sudo `fc -nl -1`'
 alias psg="ps -aSx | grep -i "
 alias copy="pbcopy < "
