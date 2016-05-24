@@ -1,9 +1,10 @@
-# Smart history searching
-bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
-
 # Vi-style readline editing
 set -o vi
+
+# Smart history searching
+# For some reason, these need to come after `set -o vi`
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
 
 # If there are multiple possible completions, just show them (no bell)
 set show-all-if-ambiguous on

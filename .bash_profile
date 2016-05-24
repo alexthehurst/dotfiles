@@ -17,4 +17,4 @@ export PATH=$PATH:/Users/alexhurst/Hurst/scripts/tick
 
 # Source all the profile components. Anything starting with .bash_profile_
 # Presumes that dotfiles/deploy.sh has been run since adding any profiile components.
-for f in ~/.bash_profile_*; do source $f; done
+for f in ~/.bash_profile_*; do source $f; done;
