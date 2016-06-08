@@ -98,7 +98,7 @@ update_git_prompt_parts() {
 
 last_pwd_parts() {
     python -c "import sys;
-home, pwd, count = sys.argv[1], sys.argv[2], int(sys.argv[3]);
+home, pwd, count = sys.argv[1], ' '.join(sys.argv[2:-1]), int(sys.argv[-1]);
 prefix_slug = '..';
 dirs = pwd.replace(home, '~').split('/');
 prefix = prefix_slug if (len(dirs) > count) else '';
@@ -119,7 +119,7 @@ update_prompt_parts() {
     # Format wip if it exists
     [ -n "${PS1_WIP}" ] && PS1_WIP=" [${PS1_WIP}]";
 
-    PS1_PWD=$(last_pwd_parts $pathSegments);
+    PS1_PWD="$(last_pwd_parts $pathSegments)";
     PS1_USER=$USER;
     PS1_HOST=$(echo $HOSTNAME | cut -d '.' -f 1);
 
@@ -134,7 +134,7 @@ update_prompt_parts() {
     printf $baseStyle@;
     printf $hostStyle$PS1_HOST;
     printf $baseStyle' in ';
-    printf $pwdStyle$PS1_PWD;
+    printf $pwdStyle"$PS1_PWD";
     printf "${PS1_JOIN}";
     printf $branchStyle"${PS1_BRANCH}";
     printf $statusStyle"${PS1_STATUS}";
