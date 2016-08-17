@@ -15,6 +15,8 @@ export LS_COLORS='rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
 
 alias ipython="ipython --no-autoindent --nosep --pprint"
 
+export HOMEBREW_GITHUB_API_TOKEN="2d5185afff870b83dc109db1bc8ecb49f6f5d035"
+
 # http://boredzo.org/blog/archives/2016-08-15/colorized-man-pages-understood-and-customized
 man() {
     env \
