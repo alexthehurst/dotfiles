@@ -72,6 +72,9 @@ set gdefault
 nnoremap j gj
 nnoremap k gk
 
+" Insert one character
+:nnoremap <Space> i_<Esc>r
+
 au FocusLost * :wa
 inoremap jj <ESC> 
 let mapleader = ","

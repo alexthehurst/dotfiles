@@ -1,1 +1,22 @@
 set surround
+set gdefault
+set ignorecase
+set smartcase
+set incsearch
+
+inoremap jj <ESC>
+let mapleader = ","
+
+:nnoremap <Space> a_<Esc>r
+:vnoremap ii vi
+:vnoremap aa va
+:vnoremap AA vA
+:vnoremap o vo
+:vnoremap O vO
+
+" :actionlist *searchterm* to get arbitrary IDEA actions which are available
+
+:noremap [m :action MethodUp<CR>
+:noremap [[ :action MethodUp<CR>
+:noremap ]m :action MethodDown<CR>
+:noremap ]] :action MethodDown<CR>
