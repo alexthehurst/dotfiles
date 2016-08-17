@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Run this script to symlink dotfiles from the repo into the home folder.
+# Only copies .dotfiles
+# Does not overwrite already-existing files, or patterns listed in `excludes`.
 
 DOTFILES_DIR=~/dotfiles
 
@@ -38,13 +40,14 @@ fi
 
 cd $DOTFILES_DIR >/dev/null
 
-for path in .*
+for path in .*      # Only .dotfiles (.*)
 do
 	if inRegexList $path ${excludes[@]}
 	then
 		echo "    EXCLUDED: $path"
 	elif [ ! -h ~/$path ]
 	then
+        # Any files in the dir, not just the dotfiles
 		ln -vis $DOTFILES_DIR/$path ~
 	else
 		echo "  ALREADY EXISTS: $path"
