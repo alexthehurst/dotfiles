@@ -1,8 +1,8 @@
 <summary here>
 
-Ticket:
-Purpose of Change:
-Description of Change:
-Tags:
+Ticket: 
+Purpose of Change: 
+Description of Change: 
+Tags: 
 
-Conflicts Resolved:
+Conflicts Resolved: 
