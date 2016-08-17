@@ -20,6 +20,7 @@
     st = "status -u"
     co = checkout
     c = commit
+    d = diff
 
     # Install the below subcommand via:
     # npm install --global git-open
@@ -38,3 +39,12 @@
     lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n'' %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
     lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
 	unstage = reset --
+
+    # http://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files
+    # Preview what will be removed before running clean
+    clean = !"git clean -i"
+
+[merge]
+	conflictstyle = diff3
+
+
