@@ -5,15 +5,6 @@
 
 # Unlikely to use these much anymore:
 
-# alias pastick='tick `pbpaste`'
-# alias tab="csvfix ascii_table"
-# alias ahcalc="~/code/ahcalc/ahcalc/ahcalc.py"
-# alias t='tick.sh'
-# alias tt='ticktick.sh'
-# alias check="cd ~/Hurst/code/Hurst/website_checker/website_checker;python3 website_checker.py;cd -"
-
-
-
 
 export EDITOR='vim'
 export VISUAL='vim'
