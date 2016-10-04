@@ -96,3 +96,6 @@ set foldlevel=99
 set foldmethod=indent
 
 cnoremap w!! w !sudo tee %
+
+" gitgutter refresh time, from https://github.com/airblade/vim-gitgutter
+set updatetime=250
