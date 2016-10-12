@@ -76,7 +76,8 @@ nnoremap k gk
 :nnoremap <Space> i_<Esc>r
 
 au FocusLost * :wa
-inoremap jj <ESC> 
+inoremap jk <ESC>
+inoremap jj <ESC>j
 let mapleader = ","
 set dir=~/tmp
 
