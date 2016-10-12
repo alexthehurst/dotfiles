@@ -23,6 +23,8 @@
     co = checkout
     c = commit
     d = diff
+    ds = diff --stat
+    ai = add -i
 
     # Install the below subcommand via:
     # npm install --global git-open
