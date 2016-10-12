@@ -99,3 +99,9 @@ cnoremap w!! w !sudo tee %
 
 " gitgutter refresh time, from https://github.com/airblade/vim-gitgutter
 set updatetime=250
+
+" copy to system clipboard if compiled with +clipboard.
+" (on Mac, use brew install vim.)
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamed
+

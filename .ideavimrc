@@ -3,6 +3,7 @@ set gdefault
 set ignorecase
 set smartcase
 set incsearch
+set clipboard=unnamed
 
 inoremap jj <ESC>
 let mapleader = ","
