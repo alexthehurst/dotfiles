@@ -9,6 +9,8 @@
 	default = simple
 [commit]
 	template = ~/.git_commit_template.txt
+[diff]
+    renames = true
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
