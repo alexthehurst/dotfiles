@@ -1,4 +1,6 @@
-export PATH=$PATH:~/scripts:~/python/bin:/Library/PostgreSQL/9.3/bin
+export PATH=$PATH:~/bin
+export PATH=$PATH:~/python/bin
+export PATH=$PATH:/Library/PostgreSQL/9.3/bin
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export PATH="$PATH:/usr/local/Cellar/mtr/0.86/sbin"
