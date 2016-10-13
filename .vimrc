@@ -73,7 +73,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Insert one character
-:nnoremap <Space> i_<Esc>r
+:nnoremap <Space> a_<Esc>r
+:nnoremap <S-Space> i_<Esc>r
 
 au FocusLost * :wa
 inoremap jk <ESC>
