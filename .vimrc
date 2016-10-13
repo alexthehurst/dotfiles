@@ -97,6 +97,7 @@ autocmd BufWritePost *.py call Flake8()
 set foldlevel=99
 set foldmethod=indent
 
+" Force save, even when not opened as sudo
 cnoremap w!! w !sudo tee %
 
 " gitgutter refresh time, from https://github.com/airblade/vim-gitgutter
