@@ -19,6 +19,7 @@ alias subl='open -a Sublime\ Text'
 alias please='sudo `fc -nl -1`'
 alias psg="ps -aSx | grep -i "
 alias copy="pbcopy < "
+alias igrep='grep -i'
 
 # Safety in file operations
 alias rm="rm -i"

@@ -1,3 +1,10 @@
+export HOMEBREW_GITHUB_API_TOKEN="2d5185afff870b83dc109db1bc8ecb49f6f5d035"
+
+# iPython
+#
+alias ipython="ipython --no-autoindent --nosep --pprint"
+
+
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/python/bin
 export PATH=$PATH:/Library/PostgreSQL/9.3/bin
@@ -15,7 +22,3 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # The orginal version is saved in .bash_profile.pysave
 export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 
-export PATH=$PATH:/Users/alexhurst/Hurst/scripts/tick
-
-# Source all the profile components. Anything starting with .bash_profile_
-# Presumes that dotfiles/deploy.sh has been run since adding any profiile components.
