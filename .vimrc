@@ -108,3 +108,10 @@ set updatetime=250
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 set clipboard=unnamed
 
+" Use https://github.com/christoomey/vim-tmux-navigator to seamlessly switch
+" between vim splits and tmux panes.
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <C-a>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-a>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-a>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-a>l :TmuxNavigateRight<cr>
