@@ -22,3 +22,7 @@ let mapleader = ","
 :noremap [[ :action MethodUp<CR>
 :noremap ]m :action MethodDown<CR>
 :noremap ]] :action MethodDown<CR>
+
+:noremap [c :action VcsShowPrevChangeMarker<CR>
+:noremap ]c :action VcsShowNextChangeMarker<CR>
+
