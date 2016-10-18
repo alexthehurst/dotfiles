@@ -1,14 +1,6 @@
 alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
 alias copy="pbcopy < "
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-# ripped from zacharyrankin
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias -- -="cd -"
-
 # update everything
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
 

@@ -3,3 +3,11 @@ function mkd() {
     mkdir -p "$@" && cd "$@";
     }
 
+# Easier navigation: .., ..., ...., ....., ~ and -
+# ripped from zacharyrankin
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
