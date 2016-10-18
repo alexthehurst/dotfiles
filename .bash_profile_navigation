@@ -3,6 +3,10 @@ function mkd() {
     mkdir -p "$@" && cd "$@";
     }
 
+# Change $PWD to the current physical directory after following a symlink
+# e.g. "cd link_to_distant_directory; cd."
+alias cd.="cd -P ."
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 # ripped from zacharyrankin
 alias ..="cd .."
