@@ -78,7 +78,7 @@ update_git_prompt_parts() {
         # Get the short symbolic ref.
         # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
         # Otherwise, just give up.
-        branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+        branchName="$(git branch | grep \* | cut --delimiter=' ' --fields=2- || \
             git rev-parse --short HEAD 2> /dev/null || \
             echo '(unknown)')";
 
