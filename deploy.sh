@@ -48,7 +48,7 @@ do
 	elif [ ! -h ~/$path ]
 	then
         # Any files in the dir, not just the dotfiles
-		ln -vis $DOTFILES_DIR/$path ~
+		ln --verbose --symbolic --interactive --backup=numbered $DOTFILES_DIR/$path ~
 	else
 		echo "  ALREADY EXISTS: $path"
 	fi
