@@ -22,6 +22,9 @@
     c = commit
     d = diff
     ds = diff --stat
+    dc = diff --cached
+    dcs = diff --cached --stat
+    dsc = diff --cached --stat
     ai = add -i
 
     # Install the below subcommand via:
