@@ -108,6 +108,9 @@ set updatetime=250
 " http://vim.wikia.com/wiki/Accessing_the_system_clipboard
 set clipboard=unnamed
 
+" Accept mouse input (all modes, tweak with n,v,i,c to turn on particular modes
+set mouse=a
+
 " Use https://github.com/christoomey/vim-tmux-navigator to seamlessly switch
 " between vim splits and tmux panes.
 let g:tmux_navigator_no_mappings = 1
