@@ -45,8 +45,8 @@
 	unstage = reset --
 
     # http://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files
-    # Preview what will be removed before running clean
-    clean = !"git clean -i"
+    # Clean in interactive mode, and include untracked directories
+    iclean = !"git clean --interactive -d"
 
 [merge]
 	conflictstyle = diff3
