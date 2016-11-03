@@ -1,16 +1,11 @@
-alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
-alias copy="pbcopy < "
 
 # update everything
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm update npm -g; npm update -g; sudo gem update --system; sudo gem update'
 
-alias d="~/Diary.py/diary.py"
 alias ls='ls --color=auto'
 alias ll='ls -ahlF'
-alias subl='open -a Sublime\ Text'
 alias please='sudo `fc -nl -1`'
 alias psg="ps -aSx | grep -i "
-alias copy="pbcopy < "
 alias igrep='grep -i'
 
 # Safety in file operations
