@@ -7,6 +7,7 @@
 	excludesfile = ~/.gitignore_global
 [commit]
 	template = ~/.git_commit_template.txt
+    verbose = true
 [diff]
     renames = true
 [difftool "sourcetree"]
