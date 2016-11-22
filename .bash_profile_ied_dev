@@ -1,0 +1,8 @@
+alias checkpsr="php-cs-fixer fix --config-file .php_cs --dry-run --diff"
+alias fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
+
+# Illuminate development on the Mac
+alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
+alias vhvu="cdmaster; vagrant halt && vagrant up"
+
+alias monitor-release='tail -f $(ls -td /home/servicemonkey/release_logs/20* | head -1)/*'

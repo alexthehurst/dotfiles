@@ -44,13 +44,13 @@ for path in .*      # Only .dotfiles (.*)
 do
 	if inRegexList $path ${excludes[@]}
 	then
-		echo "    EXCLUDED: $path"
+		echo "  Excluded:       $path"
 	elif [ ! -h ~/$path ]
 	then
         # Any files in the dir, not just the dotfiles
 		ln --verbose --symbolic --interactive --backup=numbered $DOTFILES_DIR/$path ~
 	else
-		echo "  ALREADY EXISTS: $path"
+		echo "  Already exists: $path"
 	fi
 
 done

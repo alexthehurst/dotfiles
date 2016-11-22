@@ -20,11 +20,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # The orginal version is saved in .bash_profile.pysave
 export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 
-
-# Illuminate development on the Mac
-alias vhvu="cdmaster; vagrant halt && vagrant up"
-alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
-
 alias subl='open -a Sublime\ Text'
 alias copy="pbcopy < "
 alias d="~/Diary.py/diary.py"
