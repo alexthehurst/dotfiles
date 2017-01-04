@@ -54,7 +54,6 @@ autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
 set ttyfast
 set hidden
 set backspace=indent,eol,start
-set nocompatible
 set modelines=0
 set laststatus=2
 set relativenumber 
