@@ -6,3 +6,6 @@ alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codeb
 alias vhvu="cdmaster; vagrant halt && vagrant up"
 
 alias monitor-release='tail -f $(ls -td /home/servicemonkey/release_logs/20* | head -1)/*'
+
+export PATH=$PATH:/Volumes/server-local/Illuminate/dev-vagrant/scripts/mac/bin
+
