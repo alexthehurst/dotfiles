@@ -23,3 +23,4 @@ export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 alias subl='open -a Sublime\ Text'
 alias copy="pbcopy < "
 alias d="~/Diary.py/diary.py"
+alias tv="terminal_velocity"
