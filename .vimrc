@@ -61,7 +61,6 @@ set visualbell
 set ruler
 set rulerformat=%55(%{strftime('%c',getftime(expand('%')))}\ %5l,%-6(%c%V%)\ %P%)
 set tildeop
-set undofile
 
 nnoremap / /\v
 vnoremap / /\v
@@ -79,7 +78,12 @@ au FocusLost * :wa
 inoremap jk <ESC>
 inoremap jj <ESC>j
 let mapleader = ","
-set dir=~/tmp
+
+" Persist undo history to a file
+set undofile
+" Don't clutter things up with temporary files
+set undodir=~/tmp  " Location for undo files
+set dir=~/tmp      " Location for swap files
 
 " ack
 noremap <leader>a :Ack -i 
