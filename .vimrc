@@ -35,7 +35,9 @@ set background=dark
 set number
 set relativenumber
 
-set showmatch
+set showmatch        " Highlight matching brackets/parentheses when typed
+set matchpairs+=<:>  " Include angle brackets for matching
+
 set encoding=utf-8
 set autoindent
 set showmode
