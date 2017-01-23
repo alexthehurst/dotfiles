@@ -22,10 +22,13 @@ set smartcase
 set incsearch
 set scrolloff=4
 syntax enable
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+
+" Spaces instead of tabs
+set expandtab        " Insert spaces when hitting tab
+set tabstop=4        " Display actual tabs as this width
+set shiftwidth=0     " With >>, <<, default to match 'tabstop'
+set softtabstop=-1   " Insert and delete this many spaces for a tab: negative defaults to shiftwidth
+
 set background=dark
 set number
 set showmatch
