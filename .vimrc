@@ -17,10 +17,15 @@ execute pathogen#infect()
 " Put your non-Plugin stuff after this line
 
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+
+" Better search behavior: case-insensitive for all lowercase
 set ignorecase
 set smartcase
 set incsearch
+
+" Keep at least this many lines on screen when possible
 set scrolloff=4
+
 syntax enable
 
 " Spaces instead of tabs
@@ -39,9 +44,17 @@ set showmatch        " Highlight matching brackets/parentheses when typed
 set matchpairs+=<:>  " Include angle brackets for matching
 
 set encoding=utf-8
+
+" Preserve indent when typing <Enter>
 set autoindent
+
+" Show when in insert, replace, or visual mode
 set showmode
+
+" Show partial command characters in last line, or size of selection
 set showcmd
+
+" Autocomplete menu style
 set wildmenu
 set wildmode=list:longest
 
@@ -60,21 +73,39 @@ autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
 
 
 
-set ttyfast
-set hidden
+set ttyfast   " Draw faster because we have a good connection
+set hidden    " Hide (don't unload) abandoned buffers
+
+" You may backspace past whitespace, start of the line, and where you began
+" insert
 set backspace=indent,eol,start
+
+" Don't check for modelines (prefs) near the start of files
 set modelines=0
+
+" Last window will always (2) have a status
 set laststatus=2
+
+" Flash the screen for bell
 set visualbell
+
+" Show lineno, logical colno, and visual colno in the status line
 set ruler
+
+" Also show last save time
 set rulerformat=%55(%{strftime('%c',getftime(expand('%')))}\ %5l,%-6(%c%V%)\ %P%)
+
+" Tilde acts as an operator, waits for a motion command before changing
 set tildeop
 
+" Very magic regexes: everything but [0-9a-zA-Z_] is a special character
 nnoremap / /\v
 vnoremap / /\v
 
+" :s Replaces all matches in a line by default
 set gdefault
 
+" Normal motion on 'lines' that wrap to multiple screen lines
 nnoremap j gj
 nnoremap k gk
 
@@ -82,9 +113,13 @@ nnoremap k gk
 :nnoremap <Space> a_<Esc>r
 :nnoremap <S-Space> i_<Esc>r
 
+" Autosave
 au FocusLost * :wa
+
+" Escape from insert mode
 inoremap jk <ESC>
 inoremap jj <ESC>j
+
 let mapleader = ","
 
 " Persist undo history to a file
