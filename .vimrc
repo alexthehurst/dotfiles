@@ -127,3 +127,9 @@ nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" I can't stand hitting q on accident and getting thrown into macro record
+" mode.
+nnoremap q <Nop>
+" But sometimes I need to record a macro.
+nnoremap Q q
