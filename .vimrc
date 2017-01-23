@@ -30,7 +30,11 @@ set shiftwidth=0     " With >>, <<, default to match 'tabstop'
 set softtabstop=-1   " Insert and delete this many spaces for a tab: negative defaults to shiftwidth
 
 set background=dark
+
+" Use relative line numbers, and show current real line number
 set number
+set relativenumber
+
 set showmatch
 set encoding=utf-8
 set autoindent
@@ -59,7 +63,6 @@ set hidden
 set backspace=indent,eol,start
 set modelines=0
 set laststatus=2
-set relativenumber 
 set visualbell
 set ruler
 set rulerformat=%55(%{strftime('%c',getftime(expand('%')))}\ %5l,%-6(%c%V%)\ %P%)
