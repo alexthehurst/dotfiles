@@ -9,7 +9,8 @@
 	template = ~/.git_commit_template.txt
 	verbose = true
 [diff]
-    renames = true
+    renames   = true
+    algorithm = minimal
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
