@@ -71,3 +71,5 @@
 [rebase]
     missingCommitsCheck = error
 
+[interactive]
+    singleKey = true
