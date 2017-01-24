@@ -24,3 +24,7 @@ alias subl='open -a Sublime\ Text'
 alias copy="pbcopy < "
 alias d="~/Diary.py/diary.py"
 alias tv="terminal_velocity"
+
+# Hacky cd implementation for using with fpp
+# https://github.com/facebook/PathPicker/issues/177
+alias cdp='cd "$(cat ~/.dircopy)"'
