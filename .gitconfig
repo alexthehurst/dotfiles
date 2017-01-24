@@ -57,6 +57,9 @@
     # Clean in interactive mode, and include untracked directories
     iclean = !"git clean --interactive -d"
 
+    difffiles = diff --numstat --name-only
+    branchfiles = !"git difffiles master...HEAD"
+
     remotes = remote -v
     branches = branch
     stashes = stash list
