@@ -184,3 +184,15 @@ nnoremap gV `[v`]
 nnoremap q <Nop>
 " But sometimes I need to record a macro.
 nnoremap Q q
+
+" Include my symlink to OS X user spelling dictionary
+set spellfile+=~/.vim/spell/user.en.utf-8.add
+
+" Autocompile .spl files
+" http://stackoverflow.com/questions/27240638/is-there-a-quick-way-to-rebuild-spell-files-from-wordlists
+for d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
+        exec 'mkspell! ' . fnameescape(d)
+    endif
+endfor
+
