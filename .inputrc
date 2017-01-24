@@ -1,0 +1,21 @@
+# on menu-complete, first display the common prefix, then cycle through the 
+# options when hitting TAB
+# set menu-complete-display-prefix on
+
+# If there are multiple possible completions, just show them (no bell)
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+set editing-mode vi
+set keymap vi-command
+set keymap vi-insert
+
+# Smart history searching
+# For some reason, these need to come after `set -o vi`
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+TAB: menu-complete
+# "\e[Z": menu-complete-backward
+
+# disregard case when doing completion
+set completion-ignore-case on
