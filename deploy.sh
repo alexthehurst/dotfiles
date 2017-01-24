@@ -54,6 +54,7 @@ do
 	fi
 
 done
+		ln --verbose --symbolic --interactive --backup=numbered $DOTFILES_DIR/bin ~
 
 cd - >/dev/null
 

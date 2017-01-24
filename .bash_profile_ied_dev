@@ -1,5 +1,5 @@
-alias checkpsr="php-cs-fixer fix --config-file .php_cs --dry-run --diff"
-alias fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
+[ `which checkpsr` ] || alias checkpsr="php-cs-fixer fix --config-file .php_cs --diff --dry-run"
+[ `which   fixpsr` ] || alias   fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
 
 case "$HOSTNAME" in
     alex.local)  # Mac
