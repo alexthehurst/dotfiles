@@ -1,0 +1,2 @@
+#!/bin/bash
+open "https://illuminate.atlassian.net/browse/$(git -C $PROJECT_DIR symbolic-ref --quiet --short HEAD | cut -d '-' -f 1,2 | tr '[:lower:]' '[:upper:]')"
