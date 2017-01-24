@@ -3,15 +3,17 @@
 
 case "$HOSTNAME" in
     alex.local)  # Mac
-        alias cdmaster="cd /Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
+        export PROJECT_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
         ;;
     default.v.local)  # Vagrant
-        alias cdmaster="cd /vagrant/illuminate/codebase/allthedata/master"
+        export PROJECT_DIR="/vagrant/illuminate/codebase/allthedata/master"
         ;;
     *)
         break
         ;;
 esac
+
+alias cdmaster="cd $PROJECT_DIR"
 
 alias vhvu="cdmaster; vagrant halt && vagrant up"
 
