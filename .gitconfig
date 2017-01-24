@@ -24,10 +24,16 @@
     c = commit
     d = diff
     ds = diff --stat
+    dns = diff --numstat
     dc = diff --cached
     dcs = diff --cached --stat
+    dcns = diff --cached --numstat
     dsc = diff --cached --stat
+    dnsc = diff --cached --numstat
     ai = add -i
+    o = open
+    cge = config --global --edit
+    ceg = config --global --edit
 
     # Install the below subcommand via:
     # npm install --global git-open
@@ -50,6 +56,11 @@
     # http://stackoverflow.com/questions/61212/how-to-remove-local-untracked-files
     # Clean in interactive mode, and include untracked directories
     iclean = !"git clean --interactive -d"
+
+    remotes = remote -v
+    branches = branch
+    stashes = stash list
+    tags = tag
 
 [merge]
 	conflictstyle = diff3
