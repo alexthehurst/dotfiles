@@ -170,6 +170,9 @@ nnoremap <silent> <C-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-a>l :TmuxNavigateRight<cr>
 
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+
 " Quickly open vimrc in a vertical split
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
