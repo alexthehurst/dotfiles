@@ -160,6 +160,11 @@ set mouse=a
 " Use https://github.com/christoomey/vim-tmux-navigator to seamlessly switch
 " between vim splits and tmux panes.
 let g:tmux_navigator_no_mappings = 1
+inoremap <silent> <C-a>h <C-o>:TmuxNavigateLeft<cr>
+inoremap <silent> <C-a>j <C-o>:TmuxNavigateDown<cr>
+inoremap <silent> <C-a>k <C-o>:TmuxNavigateUp<cr>
+inoremap <silent> <C-a>l <C-o>:TmuxNavigateRight<cr>
+
 nnoremap <silent> <C-a>h :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-a>k :TmuxNavigateUp<cr>
