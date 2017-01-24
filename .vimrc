@@ -165,7 +165,7 @@ nnoremap <silent> <C-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-a>l :TmuxNavigateRight<cr>
 
-" Quicky open vimrc in a vertical split
+" Quickly open vimrc in a vertical split
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " highlight last inserted text
