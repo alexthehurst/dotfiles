@@ -68,4 +68,6 @@
 [merge]
 	conflictstyle = diff3
 
+[rebase]
+    missingCommitsCheck = error
 
