@@ -6,6 +6,8 @@
 # Shell
 #
 
+export PATH=$PATH:$HOME/bin
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
@@ -45,5 +47,3 @@ man() {
 # Source all the profile components. Anything starting with .bash_profile_
 # Presumes that dotfiles/deploy.sh has been run since adding any profiile components.
 for f in ~/.bash_profile_*; do source $f; done;
-
-export PATH=$PATH:$HOME/bin
