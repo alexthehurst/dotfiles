@@ -15,3 +15,5 @@ alias gwip="git add --all; git rm $(git ls-files --deleted) 2> /dev/null; git co
 alias gunwip='git log --max-count=1 | grep --quiet --count "\-\-wip\-\-" && git reset HEAD~1'
 
 . ~/dotfiles/git_completion.bash
+
+alias gpo="git push && git open"
