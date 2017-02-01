@@ -9,7 +9,7 @@ case "$HOSTNAME" in
         export PROJECT_DIR="/vagrant/illuminate/codebase/allthedata/master"
         ;;
     *)
-        break
+        echo "Not on a development machine, so we're not setting a \$PROJECT_DIR."
         ;;
 esac
 
