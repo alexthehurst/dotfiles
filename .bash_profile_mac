@@ -28,3 +28,13 @@ alias tv="terminal_velocity"
 # Hacky cd implementation for using with fpp
 # https://github.com/facebook/PathPicker/issues/177
 alias cdp='cd "$(cat ~/.dircopy)"'
+
+# Homebrew bash completion
+# http://superuser.com/questions/819221/how-to-install-the-debian-bash-completion-using-homebrew
+# To add a new completion script, just drop it into the bash_completion.d directory
+# ```
+# cp my_completion_script `brew --prefix`/etc/bash_completion.d
+# ```
+if [ -f `brew --prefix`/etc/bash_completion ]; then 
+    . `brew --prefix`/etc/bash_completion 
+fi
