@@ -47,8 +47,21 @@ update_git_prompt_parts() {
     if [ $(git rev-parse --is-inside-work-tree &>/dev/null; echo "${?}") == '0' ]; then
         status='';
 
+        # Get the short symbolic ref.
+        # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
+        # Otherwise, just give up.
+        branchName="$(git branch | grep \* | cut --delimiter=' ' --fields=2- || \
+            git rev-parse --short HEAD 2> /dev/null || \
+            echo '(unknown)')";
+
+        # If the current repository is in WIP state, display a badge to that effect
+        WIP="$(git log -n 1 | grep -q -c "\-\-wip\-\-" && echo 'WIP' || echo '')";
+
+        # Vagrant is too slow to do a bunch of Git operations for every PS1
+        if [ "$USER" == 'vagrant' ]; then
+            status='***'
         # check if the current directory is in .git before running git checks
-        if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
+        elif [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
 
             # Ensure the index is up to date.
             git update-index --really-refresh -q &>/dev/null;
@@ -74,16 +87,6 @@ update_git_prompt_parts() {
             fi;
 
         fi;
-
-        # Get the short symbolic ref.
-        # If HEAD isn’t a symbolic ref, get the short SHA for the latest commit
-        # Otherwise, just give up.
-        branchName="$(git branch | grep \* | cut --delimiter=' ' --fields=2- || \
-            git rev-parse --short HEAD 2> /dev/null || \
-            echo '(unknown)')";
-
-        # If the current repository is in WIP state, display a badge to that effect
-        WIP="$(git log -n 1 | grep -q -c "\-\-wip\-\-" && echo 'WIP' || echo '')";
 
         PS1_BRANCH=$branchName;
         PS1_STATUS=$status
