@@ -171,6 +171,10 @@ nnoremap <silent> <C-a>j :TmuxNavigateDown<cr>
 nnoremap <silent> <C-a>k :TmuxNavigateUp<cr>
 nnoremap <silent> <C-a>l :TmuxNavigateRight<cr>
 
+" Can't use C-a to increment numbers anymore, so do this
+nnoremap <Leader>a <C-a>
+nnoremap <leader>x <C-x>
+
 " Write all buffers before navigating from Vim to tmux pane
 let g:tmux_navigator_save_on_switch = 2
 
