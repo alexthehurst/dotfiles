@@ -59,6 +59,7 @@
 
     difffiles = diff --numstat --name-only
     branchfiles = !"git difffiles master...HEAD"
+    diffbranch = diff master...HEAD
 
     remotes = remote -v
     branches = branch
