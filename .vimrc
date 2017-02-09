@@ -60,7 +60,8 @@ set wildmode=list:longest
 
 " Soft word wrapping
 set wrap linebreak nolist
-set showbreak=•\ 
+set showbreak=⤥\ 
+set cpoptions+=n  " put showbreak between line numbers
 
 """ CURSORLINE BEHAVIOR
 set cursorline
