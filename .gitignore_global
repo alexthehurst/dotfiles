@@ -12,4 +12,6 @@ $.pyc
 .Spotlight-V100
 .Trashes
 
+# JetBrains IDE files
+.idea/*
 
