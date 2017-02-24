@@ -119,6 +119,7 @@ au FocusLost * :wa
 
 " Escape from insert mode
 inoremap jk <ESC>
+inoremap JK <ESC>ZZ
 inoremap jj <ESC>j
 
 let mapleader = ","
