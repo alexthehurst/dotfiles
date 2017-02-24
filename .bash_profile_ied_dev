@@ -25,3 +25,10 @@ alias monitor-release='tail -f $(ls -td /home/servicemonkey/release_logs/20* | h
 
 export PATH=$PATH:/Volumes/server-local/Illuminate/dev-vagrant/scripts/mac/bin
 
+# Make sure to set the password in .pgpass
+alias psql-segment='PGHOST=segment.csioe0udrjeo.us-east-1.rds.amazonaws.com PGUSER=segmenter PGDATABASE=segment psql'
+
+# With an SSH tunnel open
+# Also set the .pgpass password for the localhost: 5436 version of the connection
+alias psql-segment-local='PGHOST=localhost PGUSER=segmenter PGDATABASE=segment PGPORT=5436 psql'
+
