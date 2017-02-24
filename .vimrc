@@ -202,3 +202,8 @@ for d in glob('~/.vim/spell/*.add', 1, 1)
     endif
 endfor
 
+" Breakindent matches the previous indentation on wrapped lines
+set breakindent
+set breakindentopt+=shift:2  " Shift wrapped lines this far in, matches a bullet and space
+set breakindentopt+=sbr  " Showbreak BEFORE applying additional indent
+
