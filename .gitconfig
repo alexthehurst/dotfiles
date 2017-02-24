@@ -33,6 +33,7 @@
     chardiff = diff --word-diff=color --word-diff-regex='.'
     ai = add -i
     o = open
+    po = !"git push && git open"
     cge = config --global --edit
     ceg = config --global --edit
 
