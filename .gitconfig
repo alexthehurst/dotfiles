@@ -30,6 +30,7 @@
     dcns = diff --cached --numstat
     dsc = diff --cached --stat
     dnsc = diff --cached --numstat
+    chardiff = diff --word-diff=color --word-diff-regex='.'
     ai = add -i
     o = open
     cge = config --global --edit
