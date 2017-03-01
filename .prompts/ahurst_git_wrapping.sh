@@ -122,17 +122,23 @@ update_prompt_parts() {
     # Format wip if it exists
     [ -n "${PS1_WIP}" ] && PS1_WIP=" [${PS1_WIP}]";
 
+    # Format workon if it exists
+    # PS1_WORKON=`basename $VIRTUAL_ENV`
+    [ -n "${VIRTUAL_ENV}" ] && PS1_WORKON=`basename $VIRTUAL_ENV`;
+    [ -n "${PS1_WORKON}" ] && PS1_WORKON="(${PS1_WORKON})"; # || PS1_WORKON='';
+
     PS1_PWD="$(last_pwd_parts $pathSegments)";
     PS1_USER=$USER;
     PS1_HOST=$(echo $HOSTNAME | cut -d '.' -f 1);
 
     # Update this line if the format changes.
-    PS1_MOCK=$USER-$PS1_HOST----$PS1_PWD-$PS1_BRANCH$PS1_STATUS$PS1_WIP;
+    PS1_MOCK=$PS1_WORKON-$USER-$PS1_HOST----$PS1_PWD-$PS1_BRANCH$PS1_STATUS$PS1_WIP;
 
     # The magic. If the assembled prompt is projected to be wider than the window,
     # insert a linebreak.
     [ ${#PS1_MOCK} -lt $(tput cols) ] && PS1_JOIN=' ' || PS1_JOIN='\n';
 
+    [ -n "${PS1_WORKON}" ] && printf $baseStyle$PS1_WORKON' ';
     printf $userStyle$PS1_USER;
     printf $baseStyle@;
     printf $hostStyle$PS1_HOST;

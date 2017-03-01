@@ -7,6 +7,7 @@ case "$HOSTNAME" in
         export CONFIG_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata-configs"
         alias cdc="cd $CONFIG_DIR"
         alias atd="open http://atd.v.com/master"
+        source /usr/local/bin/virtualenvwrapper.sh
         ;;
     default.v.local)  # Vagrant
         export PROJECT_DIR="/vagrant/illuminate/codebase/allthedata/master"
