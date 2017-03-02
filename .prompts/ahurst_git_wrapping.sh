@@ -123,9 +123,8 @@ update_prompt_parts() {
     [ -n "${PS1_WIP}" ] && PS1_WIP=" [${PS1_WIP}]";
 
     # Format workon if it exists
-    # PS1_WORKON=`basename $VIRTUAL_ENV`
     [ -n "${VIRTUAL_ENV}" ] && PS1_WORKON=`basename $VIRTUAL_ENV`;
-    [ -n "${PS1_WORKON}" ] && PS1_WORKON="(${PS1_WORKON})"; # || PS1_WORKON='';
+    [ -n "${PS1_WORKON}" ] && PS1_WORKON="(${PS1_WORKON})";
 
     PS1_PWD="$(last_pwd_parts $pathSegments)";
     PS1_USER=$USER;
