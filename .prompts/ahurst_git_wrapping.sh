@@ -55,7 +55,7 @@ update_git_prompt_parts() {
             echo '(unknown)')";
 
         # If the current repository is in WIP state, display a badge to that effect
-        WIP="$(git log -n 1 | grep -q -c "\-\-wip\-\-" && echo 'WIP' || echo '')";
+        WIP="$(git log -n 1 2> /dev/null | grep -q -c "\-\-wip\-\-" && echo 'WIP' || echo '')";
 
         # Vagrant is too slow to do a bunch of Git operations for every PS1
         if [ "$USER" == 'vagrant' ]; then
