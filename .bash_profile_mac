@@ -38,3 +38,6 @@ alias cdp='cd "$(cat ~/.dircopy)"'
 if [ -f `brew --prefix`/etc/bash_completion ]; then 
     . `brew --prefix`/etc/bash_completion 
 fi
+
+# Makes virtualenvwrapper a little nicer to use
+alias workoff=deactivate  # The opposite of 'workon', heh
