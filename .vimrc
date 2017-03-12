@@ -210,3 +210,9 @@ set breakindent
 set breakindentopt+=shift:2  " Shift wrapped lines this far in, matches a bullet and space
 set breakindentopt+=sbr  " Showbreak BEFORE applying additional indent
 
+" If spelling is off, don't display a warning. Just enable it!
+nnoremap [s :set spell<ENTER>[s
+nnoremap ]s :set spell<ENTER>]s
+" And easily turn it off by using leader
+nnoremap <leader>[s :set nospell<ENTER>
+nnoremap <leader>]s :set nospell<ENTER>
