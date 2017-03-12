@@ -124,6 +124,9 @@ inoremap jj <ESC>j
 
 let mapleader = ","
 
+" Easily enter command mode
+nnoremap ; :
+
 " Persist undo history to a file
 set undofile
 " Don't clutter things up with temporary files
