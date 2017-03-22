@@ -123,6 +123,8 @@ inoremap JK <ESC>ZZ
 inoremap jj <ESC>j
 
 let mapleader = ","
+" Escape from command-line mode (especially in a search!)
+cnoremap jk <ESC>
 
 " Easily enter command mode
 nnoremap ; :
