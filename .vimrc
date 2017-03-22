@@ -210,6 +210,10 @@ set breakindent
 set breakindentopt+=shift:2  " Shift wrapped lines this far in, matches a bullet and space
 set breakindentopt+=sbr  " Showbreak BEFORE applying additional indent
 
+" Perform indentation the way my fingers want, even in insert mode
+inoremap >> <C-t>
+inoremap << <C-d>
+
 " If spelling is off, don't display a warning. Just enable it!
 nnoremap [s ms:set spell<ENTER>[s
 nnoremap ]s ms:set spell<ENTER>]s
