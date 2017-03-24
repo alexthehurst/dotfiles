@@ -183,8 +183,8 @@ cnoremap jk <ESC>
 " Persist undo history to a file
 set undofile
 " Don't clutter things up with temporary files
-set undodir=~/tmp  " Location for undo files
-set dir=~/tmp      " Location for swap files
+set undodir=~/tmp/vim/undo  " Location for undo files
+set dir=~/tmp/vim/swap      " Location for swap files
 
 " ack
 noremap <leader>a :Ack -i 
