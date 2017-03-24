@@ -1,43 +1,26 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autoinstall Vundle if necessary
+" http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Setting up Vundle - the vim plugin bundler
+    let previous_vundle_install_exists=1
+    let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+    if !filereadable(vundle_readme) 
+        echo "Installing Vundle.."
+        echo ""
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
+        let previous_vundle_install_exists=0
+    endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle setup from https://github.com/VundleVim/Vundle.vim
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"     call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 "     Plugin 'tpope/vim-fugitive'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'airblade/vim-gitgutter'
-
-Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
-Plugin 'plasticboy/vim-markdown'
-
-Plugin 'ervandew/supertab'
-Plugin 'python-mode/python-mode'
-
-Plugin 'krisajenkins/vim-pipe'
-Plugin 'krisajenkins/vim-postgresql-syntax'
-
-Plugin 'tpope/vim-surround'
-
-" Text object for lines of code at the same indent
-Plugin 'michaeljsmith/vim-indent-object'
-
-Plugin 'julienr/vim-cellmode'
-
-Plugin 'confluencewiki.vim'
-
 " plugin from http://vim-scripts.org/vim/scripts.html
 "     Plugin 'L9'
 " Git plugin not hosted on GitHub
@@ -51,12 +34,6 @@ Plugin 'confluencewiki.vim'
 " different version somewhere else.
 "     Plugin 'ascenator/L9', {'name': 'newL9'}
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -64,11 +41,48 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set rtp+=~/.vim/bundle/Vundle.vim  " Add to path
+call vundle#begin()  " or specify installation path: call vundle#begin('~/path')
+
+Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
+Plugin 'plasticboy/vim-markdown'
+Plugin 'ervandew/supertab'
+Plugin 'python-mode/python-mode'
+Plugin 'krisajenkins/vim-pipe'
+Plugin 'krisajenkins/vim-postgresql-syntax'
+Plugin 'tpope/vim-surround'
+Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
+Plugin 'julienr/vim-cellmode'
+Plugin 'confluencewiki.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Autoinstall plugins if this is the first run
+" http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if previous_vundle_install_exists == 0
+    echo "Installing Vundles, please ignore key map error messages"
+    echo ""
+    :PluginInstall
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " End Vundle setup
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 
 " Better search behavior: case-insensitive for all lowercase

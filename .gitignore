@@ -2,7 +2,6 @@
 .vim-old/
 .vimrc-old
 .vim/bundle/
-!.vim/bundle/Vundle.vim
 .homebrew_github_api_token
 .ipython/profile_default/history.sqlite
 *.un~
