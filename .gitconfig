@@ -74,6 +74,8 @@
 
 [rebase]
     missingCommitsCheck = error
+    autosquash = true  # Applies to fixup! and squash! commits
+    autostash = true
 
 [interactive]
     singleKey = true
