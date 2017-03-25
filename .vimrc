@@ -283,3 +283,9 @@ nnoremap <leader>]s :set nospell<ENTER>`s
 " This depends on the confluencewiki.vim plugin
 au BufNewFile,BufRead *.jmd set filetype=confluencewiki
 au FileType jmd set filetype=confluencewiki
+
+" Autoclose the quickfix window if it's the last one remaining
+aug QFClose
+  au!
+  au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
+aug END
