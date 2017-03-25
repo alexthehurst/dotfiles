@@ -289,3 +289,7 @@ aug QFClose
   au!
   au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&buftype") == "quickfix"|q|endif
 aug END
+
+" Mappings for jumping around in the quickfix list (by location, not error)
+nnoremap [q :lprevious<Enter>
+nnoremap ]q :lnext<Enter>
