@@ -289,6 +289,9 @@ nnoremap ]s ms:set spell<ENTER>]s
 nnoremap <leader>[s :set nospell<ENTER>`s
 nnoremap <leader>]s :set nospell<ENTER>`s
 
+" Accept the first autospell correction
+nnoremap <silent> <leader>z z=1<CR><CR>
+
 " This depends on the confluencewiki.vim plugin
 au BufNewFile,BufRead *.jmd set filetype=confluencewiki
 au FileType jmd set filetype=confluencewiki
