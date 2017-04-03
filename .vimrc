@@ -307,3 +307,17 @@ nnoremap [q :lprevious<Enter>
 nnoremap ]q :lnext<Enter>
 
 highlight Folded ctermbg=black ctermfg=darkcyan
+
+
+augroup vimrc
+    " Magic from https://github.com/jez/dotfiles/blob/master/vimrc
+    " Clear the current autocmd group, in case we're re-sourcing the file
+    au!
+
+" Jump to the last known cursor position when opening a file.
+autocmd BufReadPost *
+        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \   exe "normal! g`\"" |
+        \ endif
+
+augroup END
