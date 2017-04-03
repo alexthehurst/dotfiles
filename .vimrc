@@ -305,3 +305,5 @@ aug END
 " Mappings for jumping around in the quickfix list (by location, not error)
 nnoremap [q :lprevious<Enter>
 nnoremap ]q :lnext<Enter>
+
+highlight Folded ctermbg=black ctermfg=darkcyan
