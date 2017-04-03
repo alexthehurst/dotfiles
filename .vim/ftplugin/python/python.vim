@@ -9,3 +9,15 @@ match OverLength /\%80v./
 
 nnoremap <Leader>ff :PymodeLintAuto<Enter>
 
+" Enable pylint, default is not to include it
+let g:pymode_lint_checkers = ['pep8', 'mccabe', 'pylint']
+
+" Run the linter when the file is saved, even if no changes
+let g:pymode_lint_unmodified = 1
+
+" C0325: Unnecessary parens after keyword, like print
+" I0013: Ignoring entire file due to `# pylint: skip-file`
+let g:pymode_lint_ignore ='
+            \ C0325,
+            \ I0013,
+            \ ' 
