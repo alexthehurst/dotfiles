@@ -199,6 +199,9 @@ let mapleader = ","
 " Escape from command-line mode (especially in a search!)
 cnoremap jk <ESC>
 
+" I keep doing this during searches, so the editor might as well be aware
+cnoremap nnn <Enter>nnn
+
 
 " Persist undo history to a file
 set undofile
