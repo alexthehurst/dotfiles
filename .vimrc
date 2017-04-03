@@ -180,6 +180,8 @@ set gdefault
 " Normal motion on 'lines' that wrap to multiple screen lines
 nnoremap j gj
 nnoremap k gk
+nnoremap gk k
+nnoremap gj j
 
 " Insert one character
 :nnoremap <Space> a_<Esc>r
