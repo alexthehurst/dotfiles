@@ -21,3 +21,5 @@ let g:pymode_lint_ignore ='
             \ C0325,
             \ I0013,
             \ ' 
+
+let g:pymode_rope = 0
