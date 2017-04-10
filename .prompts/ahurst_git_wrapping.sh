@@ -105,7 +105,7 @@ home, pwd, count = sys.argv[1], ' '.join(sys.argv[2:-1]), int(sys.argv[-1]);
 prefix_slug = '..';
 dirs = pwd.replace(home, '~').split('/');
 prefix = prefix_slug if (len(dirs) > count) else '';
-print prefix + '/'.join(d for d in dirs[-count:])" $HOME $PWD $1
+print(prefix + '/'.join(d for d in dirs[-count:]))" $HOME $PWD $1
 }
 
 update_prompt_parts() {
