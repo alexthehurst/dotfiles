@@ -44,6 +44,14 @@ man() {
             man "$@"
 }
 
-# Source all the profile components. Anything starting with .bash_profile_
+# Source all the listed profile components.
 # Presumes that dotfiles/deploy.sh has been run since adding any profiile components.
-for f in ~/.bash_profile_*; do source $f; done;
+declare -a profile_files=( \
+    ".bash_profile_aliases" \
+    ".bash_profile_git" \
+    ".bash_profile_ied_dev" \
+    ".bash_profile_mac" \
+    ".bash_profile_navigation" \
+    ".bash_profile_prompt" \
+    )
+for f in "${profile_files[@]}"; do source "$HOME/dotfiles/$f"; done;
