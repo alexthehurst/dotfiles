@@ -1,2 +1,2 @@
-# source ~/.prompts/classic.sh
-source ~/.prompts/ahurst_git_wrapping.sh
+# source ~/dotfiles/prompts/classic.sh
+source ~/dotfiles/prompts/ahurst_git_wrapping.sh
