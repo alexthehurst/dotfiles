@@ -1,8 +1,3 @@
-# This is my solution for porting some bash_profile elements between systems, but not all.
-# This file doesn't need package-specific things like additional path dirs, etc.
-# Works hand in hand with "source .bash_profile_portable" in the standard .bash_profile file.
-
-
 # Shell
 #
 
