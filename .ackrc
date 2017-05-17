@@ -1,3 +1,4 @@
 --ignore-dir=vendor
 --color
 --group
+--smart-case
