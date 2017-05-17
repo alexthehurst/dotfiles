@@ -19,7 +19,7 @@
 	trustExitCode = true
 
 [alias]
-    st = "status -u"
+    st = "status --short --branch"
     co = checkout
     c = commit
     d = diff
