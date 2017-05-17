@@ -3,6 +3,3 @@
 Ticket: 
 Purpose of Change: 
 Description of Change: 
-Tags: 
-
-Conflicts Resolved: 
