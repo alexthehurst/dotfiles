@@ -79,3 +79,6 @@
 
 [interactive]
     singleKey = true
+[color "diff-highlight"]
+	oldHighlight = red 52
+	newHighlight = green 22
