@@ -61,6 +61,15 @@ Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same in
 Plugin 'julienr/vim-cellmode'
 Plugin 'confluencewiki.vim'
 
+Plugin 'kana/vim-textobj-user'
+" viv
+Plugin 'Julian/vim-textobj-variable-segment'
+" vif, vic
+Plugin 'bps/vim-textobj-python'
+
+" vi({[<t etc.
+Plugin 'wellle/targets.vim'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
