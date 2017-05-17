@@ -17,9 +17,6 @@ case "$HOSTNAME" in
         ;;
 esac
 
-alias cdmaster="cd $PROJECT_DIR"
-alias cdm="cd $PROJECT_DIR"
-
 alias vhvu="cdmaster; vagrant halt && vagrant up"
 
 alias monitor-release='tail -f $(ls -td /home/servicemonkey/release_logs/20* | head -1)/*'

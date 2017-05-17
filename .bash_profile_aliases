@@ -21,3 +21,6 @@ alias g="git"
 # `r cc' runs the last command beginning with `cc' and typing `r' re-executes
 # the last command.
 alias r='fc -s'
+
+alias ws="workon sunlight"
+alias wsc="workon sunlight; clear"
