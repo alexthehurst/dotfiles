@@ -9,6 +9,9 @@ alias cd.="cd -P ."
 
 # I usually want to see hidden files.
 alias tree="tree -a"
+alias tree2="tree -L 2"
+alias tree3="tree -L 3"
+alias tree4="tree -L 4"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 # ripped from zacharyrankin
