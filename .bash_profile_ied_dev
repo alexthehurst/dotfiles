@@ -3,19 +3,17 @@
 
 case "$HOSTNAME" in
     alex*.local)  # Mac
-        export PROJECT_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
         export CONFIG_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata-configs"
         alias cdc="cd \$CONFIG_DIR"
         alias atd="open http://atd.v.com/master"
 
+        # Initialize virtualenvwrapper
+        export PROJECT_HOME=$HOME/projects
         # shellcheck disable=SC1091
         source /usr/local/bin/virtualenvwrapper.sh
         ;;
-    default.v.local)  # Vagrant
-        export PROJECT_DIR="/vagrant/illuminate/codebase/allthedata/master"
-        ;;
     *)
-        echo "Not on a development machine, so we're not setting a \$PROJECT_DIR."
+        echo "Not on a development machine, so we're not setting a \$PROJECT_DIR or initializing virtualenvwrapper."
         ;;
 esac
 
