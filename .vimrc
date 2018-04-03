@@ -390,6 +390,7 @@ autocmd InsertEnter * highlight  CursorLine ctermbg=Black cterm=bold
 " Revert Color to default when leaving Insert Mode
 autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
 
+highlight Comment cterm=italic
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Static Analysis
