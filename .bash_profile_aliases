@@ -26,4 +26,6 @@ alias v="vim"
 alias r='fc -s'
 
 alias ws="workon sunlight"
+alias wi="workon insights-service"
+alias wa="workon atd"
 alias wsc="workon sunlight; clear"
