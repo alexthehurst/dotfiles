@@ -2,7 +2,7 @@
 [ "$(command -v   fixpsr)" ] || alias   fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
 
 case "$HOSTNAME" in
-    alex.local)  # Mac
+    alex*.local)  # Mac
         export PROJECT_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
         export CONFIG_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata-configs"
         alias cdc="cd \$CONFIG_DIR"
