@@ -1,16 +1,18 @@
+set encoding=utf-8
+scriptencoding utf-8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autoinstall Vundle if necessary
 " http://erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Setting up Vundle - the vim plugin bundler
-    let previous_vundle_install_exists=1
-    let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-    if !filereadable(vundle_readme) 
-        echo "Installing Vundle.."
-        echo ""
+    let g:previous_vundle_install_exists=1
+    let g:vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+    if !filereadable(g:vundle_readme) 
+        echo 'Installing Vundle..'
+        echo ''
         silent !mkdir -p ~/.vim/bundle
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
-        let previous_vundle_install_exists=0
+        let g:previous_vundle_install_exists=0
     endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -41,14 +43,14 @@
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim  " Add to path
+set runtimepath+=~/.vim/bundle/Vundle.vim  " Add to path
 call vundle#begin()  " or specify installation path: call vundle#begin('~/path')
 
 Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required
 Plugin 'christoomey/vim-tmux-navigator'
+
 Plugin 'airblade/vim-gitgutter'
 Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
 Plugin 'plasticboy/vim-markdown'
@@ -83,8 +85,8 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if previous_vundle_install_exists == 0
-    echo "Installing Vundles, please ignore key map error messages"
-    echo ""
+    echo 'Installing Vundles, please ignore key map error messages'
+    echo ''
     :PluginInstall
 endif
 
@@ -124,7 +126,6 @@ set relativenumber
 set showmatch        " Highlight matching brackets/parentheses when typed
 set matchpairs+=<:>  " Include angle brackets for matching
 
-set encoding=utf-8
 
 " Preserve indent when typing <Enter>
 set autoindent
@@ -205,7 +206,7 @@ inoremap jk <ESC>
 inoremap JK <ESC>ZZ
 inoremap jj <ESC>j
 
-let mapleader = ","
+let g:mapleader = ','
 " Escape from command-line mode (especially in a search!)
 cnoremap jk <ESC>
 
@@ -217,7 +218,7 @@ cnoremap nnn <Enter>nnn
 set undofile
 " Don't clutter things up with temporary files
 set undodir=~/tmp/vim/undo  " Location for undo files
-set dir=~/tmp/vim/swap      " Location for swap files
+set directory=~/tmp/vim/swap      " Location for swap files
 
 " ack
 noremap <leader>a :Ack -i 
@@ -277,9 +278,9 @@ set spellfile+=~/.vim/spell/user.en.utf-8.add
 
 " Autocompile .spl files
 " http://stackoverflow.com/questions/27240638/is-there-a-quick-way-to-rebuild-spell-files-from-wordlists
-for d in glob('~/.vim/spell/*.add', 1, 1)
-    if filereadable(d) && (!filereadable(d . '.spl') || getftime(d) > getftime(d . '.spl'))
-        exec 'mkspell! ' . fnameescape(d)
+for s:d in glob('~/.vim/spell/*.add', 1, 1)
+    if filereadable(s:d) && (!filereadable(s:d . '.spl') || getftime(s:d) > getftime(s:d . '.spl'))
+        exec 'mkspell! ' . fnameescape(s:d)
     endif
 endfor
 
