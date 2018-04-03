@@ -20,6 +20,10 @@ let g:pymode_lint_unmodified = 1
 let g:pymode_lint_ignore ='
             \ C0325,
             \ I0013,
-            \ ' 
+            \ F0002, ' 
 
 let g:pymode_rope = 0
+
+let g:pymode_python = 'python3'
+
+let g:pymode_lint = 0
