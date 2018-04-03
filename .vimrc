@@ -214,6 +214,11 @@ nnoremap k gk
 nnoremap gk k
 nnoremap gj j
 
+vnoremap j gj
+vnoremap k gk
+vnoremap gk k
+vnoremap gj j 
+
 " Insert one character
 :nnoremap <Space> a_<Esc>r
 :nnoremap <S-Space> i_<Esc>r
@@ -225,6 +230,7 @@ au FocusLost * :wa
 inoremap jk <ESC>
 inoremap JK <ESC>ZZ
 inoremap jj <ESC>j
+inoremap kkk <ESC>kk
 
 let g:mapleader = ','
 " Escape from command-line mode (especially in a search!)
@@ -260,6 +266,9 @@ set clipboard=unnamed
 
 " Accept mouse input (all modes, tweak with n,v,i,c to turn on particular modes
 set mouse=a
+
+" Paste without overwriting the existing clipboard
+vnoremap <leader>p "_dP
 
 " Use https://github.com/christoomey/vim-tmux-navigator to seamlessly switch
 " between vim splits and tmux panes.
@@ -353,6 +362,10 @@ autocmd BufReadPost *
         \ endif
 
 augroup END
+
+
+" Split lines, like the opposite of J: https://github.com/drzel/vim-split-line
+nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color
