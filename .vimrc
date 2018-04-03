@@ -52,6 +52,11 @@ Plugin 'VundleVim/Vundle.vim'  " let Vundle manage Vundle, required
 Plugin 'christoomey/vim-tmux-navigator'
 
 Plugin 'airblade/vim-gitgutter'
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerVisual
+xmap ah <Plug>GitGutterTextObjectOuterVisual
+
 Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ervandew/supertab'
