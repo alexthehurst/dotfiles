@@ -1,12 +1,14 @@
-[ `command -v checkpsr` ] || alias checkpsr="php-cs-fixer fix --config-file .php_cs --diff --dry-run"
-[ `command -v   fixpsr` ] || alias   fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
+[ "$(command -v checkpsr)" ] || alias checkpsr="php-cs-fixer fix --config-file .php_cs --diff --dry-run"
+[ "$(command -v   fixpsr)" ] || alias   fixpsr="php-cs-fixer fix --config-file .php_cs --diff"
 
 case "$HOSTNAME" in
     alex.local)  # Mac
         export PROJECT_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata/master"
         export CONFIG_DIR="/Volumes/server-local/Illuminate/dev-vagrant/illuminate/codebase/allthedata-configs"
-        alias cdc="cd $CONFIG_DIR"
+        alias cdc="cd \$CONFIG_DIR"
         alias atd="open http://atd.v.com/master"
+
+        # shellcheck disable=SC1091
         source /usr/local/bin/virtualenvwrapper.sh
         ;;
     default.v.local)  # Vagrant
