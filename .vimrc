@@ -70,6 +70,7 @@ Plugin 'bps/vim-textobj-python'
 " vi({[<t etc.
 Plugin 'wellle/targets.vim'
 
+Plugin 'file:///Users/alexhurst/projects/invert-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
