@@ -65,7 +65,6 @@ Plugin 'krisajenkins/vim-pipe'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
-Plugin 'julienr/vim-cellmode'
 Plugin 'confluencewiki.vim'
 
 Plugin 'kana/vim-textobj-user'
