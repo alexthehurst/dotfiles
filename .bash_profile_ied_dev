@@ -21,7 +21,7 @@ alias vhvu="cdmaster; vagrant halt && vagrant up"
 
 alias monitor-release='tail -f $(ls -td /home/servicemonkey/release_logs/20* | head -1)/*'
 
-export PATH=$PATH:/Volumes/server-local/Illuminate/dev-vagrant/scripts/mac/bin
+export PATH=$PATH:/Volumes/illuminate.local/scripts/mac/bin
 
 # Make sure to set the password in .pgpass
 alias psql-segment='PGHOST=segment.csioe0udrjeo.us-east-1.rds.amazonaws.com PGUSER=segmenter PGDATABASE=segment psql'
