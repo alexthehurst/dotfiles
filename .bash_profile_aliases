@@ -29,3 +29,5 @@ alias ws="workon sunlight"
 alias wi="workon insights-service"
 alias wa="workon atd"
 alias wsc="workon sunlight; clear"
+
+alias uuid="python3 -c 'import uuid; print(uuid.uuid4(), end=\"\")'"
