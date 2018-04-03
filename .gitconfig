@@ -71,6 +71,17 @@
     branches = branch
     stashes = stash list
     tags = tag
+    aliases = !"git config --list | grep ^alias. | cut -d . -f 2-"
+    alias = aliases
+    recents = recent
+
+	credit = blame
+
+    # The last 10 branches I've worked on
+    recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+    ls = ls-tree --abbrev HEAD .
+
 
 [merge]
 	conflictstyle = diff3
