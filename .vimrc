@@ -66,6 +66,11 @@ Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
 Plugin 'confluencewiki.vim'
+Plugin 'w0rp/ale'
+let g:ale_sign_warning='●'
+hi ALEErrorSign ctermfg=red ctermbg=none
+let g:ale_sign_error='●'
+hi ALEWarningSign ctermfg=yellow ctermbg=none
 
 Plugin 'kana/vim-textobj-user'
 " viv
@@ -336,3 +341,12 @@ autocmd BufReadPost *
         \ endif
 
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Static Analysis
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ale_echo_msg_format = '%s [%linter%]'
+" http://mypy.readthedocs.io/en/latest/command_line.html#follow-imports
+let g:ale_python_mypy_options = '--ignore-missing-imports'
+
