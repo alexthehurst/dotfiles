@@ -60,27 +60,28 @@ xmap ah <Plug>GitGutterTextObjectOuterVisual
 Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
 Plugin 'plasticboy/vim-markdown'
 Plugin 'ervandew/supertab'
-Plugin 'python-mode/python-mode'
 Plugin 'krisajenkins/vim-pipe'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
 Plugin 'confluencewiki.vim'
 Plugin 'scrooloose/nerdcommenter'
+
+" Python
+Plugin 'bps/vim-textobj-python'
 Plugin 'heavenshell/vim-pydocstring'
+Plugin 'python-mode/python-mode'
+
+
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
+
 Plugin 'w0rp/ale'
-let g:ale_sign_warning='●'
-hi ALEErrorSign ctermfg=red ctermbg=none
-let g:ale_sign_error='●'
-hi ALEWarningSign ctermfg=yellow ctermbg=none
 
 Plugin 'kana/vim-textobj-user'
 " viv
 Plugin 'Julian/vim-textobj-variable-segment'
 " vif, vic
-Plugin 'bps/vim-textobj-python'
 
 " vi({[<t etc.
 Plugin 'wellle/targets.vim'
@@ -374,3 +375,7 @@ let g:ale_echo_msg_format = '%s [%linter%]'
 " http://mypy.readthedocs.io/en/latest/command_line.html#follow-imports
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 
+let g:ale_sign_warning='●'
+hi ALEErrorSign ctermfg=red ctermbg=none
+let g:ale_sign_error='●'
+hi ALEWarningSign ctermfg=yellow ctermbg=none
