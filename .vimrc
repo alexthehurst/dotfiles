@@ -367,6 +367,17 @@ augroup END
 " Split lines, like the opposite of J: https://github.com/drzel/vim-split-line
 nnoremap S :keeppatterns substitute/\s*\%#\s*/\r/e <bar> normal! ==<CR>
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Python
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap  <Leader>fd :Pydocstring<Enter>
+let g:pydocstring_templates_dir = '~/projects/sunlight/config/pydocstring-templates'
+
+highlight pythonFunction cterm=italic
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -392,3 +403,20 @@ let g:ale_sign_warning='●'
 hi ALEErrorSign ctermfg=red ctermbg=none
 let g:ale_sign_error='●'
 hi ALEWarningSign ctermfg=yellow ctermbg=none
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JSON
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+augroup json
+    nnoremap <Leader>ff :%!python -m json.tool<ENTER>
+augroup END
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PHP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup php
+    :nnoremap <leader>d oecho __METHOD__.':'.__LINE__."\n"; ob_flush();  // XXX: DEBUG<ESC>k
+    :nnoremap <leader>D Oecho __METHOD__.':'.__LINE__."\n"; ob_flush();  // XXX: DEBUG<ESC>j
+augroup END
