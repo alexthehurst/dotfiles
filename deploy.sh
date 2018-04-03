@@ -15,6 +15,7 @@ excludes=(
 	'^\.\.'
 	'swp$'
 	'~$'
+    '!.bash_profile'
 )
 
 # Compares the first argument (string) to each element of the second argument (array).
