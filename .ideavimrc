@@ -26,3 +26,7 @@ let mapleader = ","
 :noremap [c :action VcsShowPrevChangeMarker<CR>
 :noremap ]c :action VcsShowNextChangeMarker<CR>
 
+:nnoremap <leader>d oecho __METHOD__.':'.__LINE__."\n"; // XXX: DEBUG<ESC>k
+:nnoremap <leader>D Oecho __METHOD__.':'.__LINE__."\n"; // XXX: DEBUG<ESC>j
+
+set scrolloff=4
