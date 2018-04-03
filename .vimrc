@@ -173,12 +173,6 @@ set cpoptions+=n  " put showbreak between line numbers
 """ CURSORLINE BEHAVIOR
 set cursorline
 
-" Change Color when entering Insert Mode
-autocmd InsertEnter * highlight  CursorLine ctermbg=Black cterm=bold
-
-" Revert Color to default when leaving Insert Mode
-autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
-
 
 
 set ttyfast   " Draw faster because we have a good connection
@@ -342,8 +336,6 @@ aug END
 nnoremap [q :lprevious<Enter>
 nnoremap ]q :lnext<Enter>
 
-highlight Folded ctermbg=black ctermfg=darkcyan
-
 
 augroup vimrc
     " Magic from https://github.com/jez/dotfiles/blob/master/vimrc
@@ -357,6 +349,19 @@ autocmd BufReadPost *
         \ endif
 
 augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+highlight Folded ctermbg=black ctermfg=darkcyan
+highlight Comment ctermfg=darkcyan
+
+" Change Color when entering Insert Mode
+autocmd InsertEnter * highlight  CursorLine ctermbg=Black cterm=bold
+
+" Revert Color to default when leaving Insert Mode
+autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Static Analysis
