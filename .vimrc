@@ -281,7 +281,10 @@ nnoremap <leader>x <C-x>
 let g:tmux_navigator_save_on_switch = 2
 
 " Quickly open vimrc in a vertical split
-nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nnoremap <leader>ve <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Reload vimrc
+nnoremap <leader>vr :source ~/.vimrc<Enter>
 
 " highlight last inserted text
 nnoremap gV `[v`]
