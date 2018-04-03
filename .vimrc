@@ -66,6 +66,10 @@ Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
 Plugin 'confluencewiki.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'heavenshell/vim-pydocstring'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
 Plugin 'w0rp/ale'
 let g:ale_sign_warning='●'
 hi ALEErrorSign ctermfg=red ctermbg=none
@@ -81,7 +85,19 @@ Plugin 'bps/vim-textobj-python'
 " vi({[<t etc.
 Plugin 'wellle/targets.vim'
 
+Plugin 'tpope/vim-fugitive'
+
 Plugin 'file:///Users/alexhurst/projects/invert-vim'
+
+" Identify typescript filetype
+Plugin 'leafgarland/typescript-vim'
+
+Plugin 'rjungemann/tslime.vim'
+let g:tslime_always_current_session = 1
+let g:tslime_always_current_window = 1
+vmap <C-c> <Plug>SendSelectionToTmux
+
+Plugin 'google/yapf'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
