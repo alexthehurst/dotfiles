@@ -22,6 +22,7 @@
     st = "status --short --branch"
     co = checkout
     c = commit
+    ci = commit --interactive
     d = diff
     ds = diff --stat
     dns = diff --numstat
@@ -33,10 +34,12 @@
     chardiff = diff --word-diff=color --word-diff-regex='.'
     ai = add -i
     o = open
+    p = push
     po = !"git push && git open"
     cge = config --global --edit
     ceg = config --global --edit
     go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"  # Thanks, Lightster
+    ri = rebase --interactive HEAD^^
 
     # Install the below subcommand via:
     # npm install --global git-open
