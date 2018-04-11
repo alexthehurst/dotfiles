@@ -36,8 +36,11 @@
     o = open
     p = push
     po = !"git push && git open"
+    # Create the branch on origin
+    puush = !"git push --set-upstream origin $(git symbolic-ref --quiet --short HEAD)"
     cge = config --global --edit
     ceg = config --global --edit
+    # Check out the branch, and if it doesn't exist, create it.
     go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"  # Thanks, Lightster
     ri = rebase --interactive HEAD^^
 
