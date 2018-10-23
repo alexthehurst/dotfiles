@@ -41,3 +41,10 @@ fi
 
 # Makes virtualenvwrapper a little nicer to use
 alias workoff=deactivate  # The opposite of 'workon', heh
+
+
+alias vpn='osascript -e '\''tell application "System Events"
+    tell current location of network preferences
+        connect service "VPN"
+    end tell
+end tell'\'''
