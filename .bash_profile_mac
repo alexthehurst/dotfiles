@@ -48,3 +48,16 @@ alias vpn='osascript -e '\''tell application "System Events"
         connect service "VPN"
     end tell
 end tell'\'''
+
+# Presuming we have fzf installed
+## Use fzf for filename completion via `vim **<tab>`
+complete -o default -F _fzf_path_completion -o bashdefault vim
+## Perform better in large git repos
+export FZF_DEFAULT_COMMAND='
+  (git ls-tree -r --name-only HEAD ||
+   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+      sed s/^..//) 2> /dev/null'
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+## Do the same when we're using ctrl-t
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
