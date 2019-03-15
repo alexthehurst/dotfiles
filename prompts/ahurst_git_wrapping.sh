@@ -66,6 +66,7 @@ update_git_prompt_parts() {
         elif [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
 
             # Ensure the index is up to date.
+            # This is slow
             git update-index --really-refresh -q &>/dev/null;
 
             # Check for uncommitted changes in the index.
@@ -111,7 +112,6 @@ print(prefix + '/'.join(d for d in dirs[-count:]))" $HOME $PWD $1
 }
 
 update_prompt_parts() {
-    
     # set PS1_BRANCH, PS1_STATUS, and PS1_WIP
     update_git_prompt_parts;
 
@@ -153,7 +153,6 @@ update_prompt_parts() {
 
     PS1="\[${baseStyle}\]\$ \[${reset}\]"; # `$` (and reset color)
     export PS1;
-
 }
 
 ### STYLES
