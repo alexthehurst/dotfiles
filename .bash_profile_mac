@@ -1,63 +1,75 @@
-export HOMEBREW_GITHUB_API_TOKEN="2d5185afff870b83dc109db1bc8ecb49f6f5d035"
-
-# iPython
-#
-alias ipython="ipython --no-autoindent --nosep --pprint"
+case "$HOSTNAME" in
+    alex*.local)  # Mac
 
 
-export PATH=$PATH:~/python/bin
-export PATH=$PATH:/Library/PostgreSQL/9.3/bin
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-export PATH="/usr/local/sbin:$PATH"
+        # iPython
+        #
+        alias ipython="ipython --no-autoindent --nosep --pprint"
 
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-# Setting PATH for Python 3.5
-# The orginal version is saved in .bash_profile.pysave
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-
-alias subl='open -a Sublime\ Text'
-alias copy="pbcopy < "
-alias d="~/Diary.py/diary.py"
-alias tv="terminal_velocity"
-
-# Hacky cd implementation for using with fpp
-# https://github.com/facebook/PathPicker/issues/177
-alias cdp='cd "$(cat ~/.dircopy)"'
-
-# Homebrew bash completion
-# http://superuser.com/questions/819221/how-to-install-the-debian-bash-completion-using-homebrew
-# To add a new completion script, just drop it into the bash_completion.d directory
-# ```
-# cp my_completion_script `brew --prefix`/etc/bash_completion.d
-# ```
-if [ -f `brew --prefix`/etc/bash_completion ]; then 
-    . `brew --prefix`/etc/bash_completion 
-fi
-
-# Makes virtualenvwrapper a little nicer to use
-alias workoff=deactivate  # The opposite of 'workon', heh
+        export PATH=$PATH:~/python/bin
+        export PATH=$PATH:/Library/PostgreSQL/9.3/bin
+        export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+        export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+        export PATH="/usr/local/sbin:$PATH"
 
 
-alias vpn='osascript -e '\''tell application "System Events"
-    tell current location of network preferences
-        connect service "VPN"
-    end tell
-end tell'\'''
+        [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+        [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+        export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# Presuming we have fzf installed
-## Use fzf for filename completion via `vim **<tab>`
-complete -o default -F _fzf_path_completion -o bashdefault vim
-## Perform better in large git repos
-export FZF_DEFAULT_COMMAND='
-  (git ls-tree -r --name-only HEAD ||
-   find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
-      sed s/^..//) 2> /dev/null'
-export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
-## Do the same when we're using ctrl-t
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+        # Setting PATH for Python 3.5
+        # The orginal version is saved in .bash_profile.pysave
+        export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
+
+        alias subl='open -a Sublime\ Text'
+        alias copy="pbcopy < "
+        alias d="~/Diary.py/diary.py"
+        alias tv="terminal_velocity"
+
+        # Hacky cd implementation for using with fpp
+        # https://github.com/facebook/PathPicker/issues/177
+        alias cdp='cd "$(cat ~/.dircopy)"'
+
+        # Should contain: export HOMEBREW_GITHUB_API_TOKEN='XXXX'
+        source .homebrew_github_api_token
+
+        # Homebrew bash completion
+        # http://superuser.com/questions/819221/how-to-install-the-debian-bash-completion-using-homebrew
+        # To add a new completion script, just drop it into the bash_completion.d directory
+        # ```
+        # cp my_completion_script `brew --prefix`/etc/bash_completion.d
+        # ```
+        if [ -f `brew --prefix`/etc/bash_completion ]; then 
+            . `brew --prefix`/etc/bash_completion 
+        fi
+
+        # Makes virtualenvwrapper a little nicer to use
+        alias workoff=deactivate  # The opposite of 'workon', heh
+
+
+        alias vpn='osascript -e '\''tell application "System Events"
+            tell current location of network preferences
+                connect service "VPN"
+            end tell
+        end tell'\'''
+
+        # Presuming we have fzf installed
+        ## Use fzf for filename completion via `vim **<tab>`
+        complete -o default -F _fzf_path_completion -o bashdefault vim
+        ## Perform better in large git repos
+        export FZF_DEFAULT_COMMAND='
+          (git ls-tree -r --name-only HEAD ||
+           find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+              sed s/^..//) 2> /dev/null'
+        export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
+        ## Do the same when we're using ctrl-t
+        export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+        export FZF_CTRL_T_OPTS="$FZF_DEFAULT_OPTS"
+
+
+        ;;
+    *)
+        echo "Not on a development machine, so we're not setting a \$PROJECT_DIR or initializing virtualenvwrapper."
+        ;;
+esac
