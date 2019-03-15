@@ -11,7 +11,6 @@ case "$HOSTNAME" in
         source /usr/local/bin/virtualenvwrapper.sh
         ;;
     *)
-        echo "Not on a development machine, so we're not setting a \$PROJECT_DIR or initializing virtualenvwrapper."
         ;;
 esac
 
