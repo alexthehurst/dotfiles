@@ -1,2 +1,17 @@
+-- use vertical layout for results as needed
 \pset x auto
+
+-- Report timing for each query
 \timing
+
+-- Per-database history files
+\set HISTFILE ~/.psql_history- :DBNAME
+
+-- No limit to history size
+\set HISTSIZE -1
+
+-- Ignore duplicates for history, but not space-leading chars
+\set HISTCONTROL ignoredups
+
+-- Complete SQL keywords as uppercase
+\set COMP_KEYWORD_CASE lower  
