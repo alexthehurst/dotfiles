@@ -128,6 +128,9 @@ set ignorecase
 set smartcase
 set incsearch
 
+" Use // to search for the highlighted string, from https://vim.fandom.com/wiki/Search_for_visually_selected_text
+vnoremap // y/<C-R>"<CR>
+
 " Keep at least this many lines on screen when possible
 set scrolloff=4
 
@@ -140,8 +143,8 @@ set shiftwidth=0     " With >>, <<, default to match 'tabstop'
 set softtabstop=-1   " Insert and delete this many spaces for a tab: negative defaults to shiftwidth
     
 " When tabs exist, show them nicely. Don't show an EOL, just a solid block for
-" trailing spaces.
-set listchars=tab:\|\ ,trail:█
+" trailing spaces. Highlight nasty nbsps.
+set listchars=tab:\|\ ,trail:█,nbsp:%
 
 set background=dark
 
@@ -228,9 +231,13 @@ au FocusLost * :wa
 
 " Escape from insert mode
 inoremap jk <ESC>
-inoremap JK <ESC>ZZ
 inoremap jj <ESC>j
 inoremap kkk <ESC>kk
+" Save and quit
+inoremap JK <ESC>ZZ
+" That's so sticky I want it everywhere
+nnoremap JK ZZ  " Save and quit
+
 
 let g:mapleader = ','
 " Escape from command-line mode (especially in a search!)
@@ -299,6 +306,26 @@ nnoremap <leader>vr :source ~/.vimrc<Enter>
 " highlight last inserted text
 nnoremap gV `[v`]
 
+" Yank to the end of the line (make Y act like C and D)
+nnoremap Y y$
+
+" Don't overwrite the system clipboard when transposing letters via xp
+nnoremap xp "xx"xp
+" In fact, don't overwrite the system clipboard when using x at all
+nnoremap x "_x
+
+" I want to go to the last insert location _without_ going to insert mode.
+nnoremap gI gi<Esc>
+
+" Use H and L to move within the current line instead of to a different line in the visible window.
+nmap H ^
+nmap L $
+vmap H ^
+vmap L $
+
+" Waiting 1000ms before accepting keypresses like 'x' is hard to take.
+set timeoutlen=300
+
 " I can't stand hitting q on accident and getting thrown into macro record
 " mode.
 nnoremap q <Nop>
@@ -355,9 +382,11 @@ augroup vimrc
     " Clear the current autocmd group, in case we're re-sourcing the file
     au!
 
-" Jump to the last known cursor position when opening a file.
+" Jump to the last known cursor position when opening a file,
+" except git commit files 
+" (these trick Vim because the filename is always the same)
 autocmd BufReadPost *
-        \ if line("'\"") > 1 && line("'\"") <= line("$") |
+        \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft != 'gitcommit' |
         \   exe "normal! g`\"" |
         \ endif
 
@@ -404,20 +433,3 @@ let g:ale_sign_warning='●'
 hi ALEErrorSign ctermfg=red ctermbg=none
 let g:ale_sign_error='●'
 hi ALEWarningSign ctermfg=yellow ctermbg=none
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JSON
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup json
-    nnoremap <Leader>ff :%!python -m json.tool<ENTER>
-augroup END
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" PHP
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-augroup php
-    :nnoremap <leader>d oecho __METHOD__.':'.__LINE__."\n"; ob_flush();  // XXX: DEBUG<ESC>k
-    :nnoremap <leader>D Oecho __METHOD__.':'.__LINE__."\n"; ob_flush();  // XXX: DEBUG<ESC>j
-augroup END

@@ -28,4 +28,4 @@ let g:pymode_python = 'python3'
 
 let g:pymode_lint = 0
 
-nnoremap ,ib :InvertPythonBooleans<CR>
+nnoremap <Leader><Leader> :InvertPythonBooleans<CR>
