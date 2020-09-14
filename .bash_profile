@@ -18,7 +18,7 @@ export LS_COLORS='rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5
 # Avoid duplicates in history
 export HISTCONTROL=ignoredups:erasedups
 # Prevent saving to history by preceding the command with a space
-export HISTCONTROL=$HISTCONTROL:ignorespace
+# export HISTCONTROL=$HISTCONTROL:ignorespace
 # Save history when exiting a shell; helps with multiple open shells
 shopt -s histappend
 # Keep an infinite history buffer
