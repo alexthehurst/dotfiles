@@ -51,6 +51,13 @@ declare -a profile_files=( \
     )
 for f in "${profile_files[@]}"; do source "$HOME/dotfiles/$f"; done;
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/alexhurst/bin/google-cloud-sdk/path.bash.inc' ]; then . '/Users/alexhurst/bin/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/alexhurst/bin/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/alexhurst/bin/google-cloud-sdk/completion.bash.inc'; fi
+
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
