@@ -51,7 +51,7 @@ declare -a profile_files=( \
     )
 for f in "${profile_files[@]}"; do source "$HOME/dotfiles/$f"; done;
 
-# Setting PATH for Python 3.6
+# Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
