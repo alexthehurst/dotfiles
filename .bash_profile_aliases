@@ -20,6 +20,12 @@ alias g="git"
 # vim, duh
 alias v="vim"
 
+# kubectl
+alias k="kubectl"
+
+# docker-compose
+alias dk="docker-compose"
+
 # From fc help: A useful alias to use with this is r='fc -s', so that typing
 # `r cc' runs the last command beginning with `cc' and typing `r' re-executes
 # the last command.
