@@ -44,7 +44,6 @@ man() {
 declare -a profile_files=( \
     ".bash_profile_aliases" \
     ".bash_profile_git" \
-    ".bash_profile_ied_dev" \
     ".bash_profile_mac" \
     ".bash_profile_navigation" \
     ".bash_profile_prompt" \
