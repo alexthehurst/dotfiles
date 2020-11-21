@@ -18,10 +18,6 @@ case "$HOSTNAME" in
         [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
         export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-        # Setting PATH for Python 3.5
-        # The orginal version is saved in .bash_profile.pysave
-        export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
-
         alias subl='open -a Sublime\ Text'
         alias copy="pbcopy < "
         alias d="~/Diary.py/diary.py"
