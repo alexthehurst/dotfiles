@@ -7,8 +7,8 @@ function mkd() {
 # e.g. "cd link_to_distant_directory; cd."
 alias cd.="cd -P ."
 
-# I usually want to see hidden files.
-alias tree="tree -a"
+# I usually want to see hidden files. I rarely want to see what's in .git and .idea.
+alias tree="tree -a -I '.git|.idea' --dirsfirst"
 alias tree2="tree -L 2"
 alias tree3="tree -L 3"
 alias tree4="tree -L 4"
