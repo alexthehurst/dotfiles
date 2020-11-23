@@ -5,13 +5,15 @@
 	email = ahurst@illuminateed.net
 [core]
 	excludesfile = ~/.gitignore_global
-	pager = diff-so-fancy | less --tabs=4 -RFX
 [commit]
 	template = ~/.git_commit_template.txt
 	verbose = true
 [diff]
     renames   = true
-    algorithm = minimal
+    algorithm = patience
+[push]
+    # Allow pushing to an upstream branch with a different name
+    default = upstream
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -34,11 +36,15 @@
     dnsc = diff --cached --numstat
     chardiff = diff --word-diff=color --word-diff-regex='.'
     ai = add -i
-    o = open
+    o = !"git open origin $(git symbolic-ref --quiet --short HEAD)"
+    op = !"gh pr view --web $(tkt)"
     p = push
     po = !"git push && git open"
     # Create the branch on origin
     puush = !"git push --set-upstream origin $(git symbolic-ref --quiet --short HEAD)"
+    bpuush = !"git push --set-upstream origin $(git symbolic-ref --quiet --short HEAD)"
+    coo = "!sh -c \"git co -b $(tkt $1) && git puush && git branch -m $1\" -"
+    ;puush = !"git push --set-upstream origin $(git symbolic-ref --quiet --short HEAD | sed -e 's/\([a-zA-Z]\+-[0-9]\+\).*/\U\1/')"
     cge = config --global --edit
     ceg = config --global --edit
     # Check out the branch, and if it doesn't exist, create it.
@@ -100,3 +106,5 @@
 [color "diff-highlight"]
 	oldHighlight = red 52
 	newHighlight = green 22
+[pull]
+	rebase = false
