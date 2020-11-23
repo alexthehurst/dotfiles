@@ -58,11 +58,11 @@ xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
 
 Plugin 'godlygeek/tabular'  " required for plasticboy/vim-markdown
-Plugin 'plasticboy/vim-markdown'
 Plugin 'ervandew/supertab'
 Plugin 'krisajenkins/vim-pipe'
 Plugin 'krisajenkins/vim-postgresql-syntax'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-abolish'
 Plugin 'michaeljsmith/vim-indent-object'  " Text object for lines at the same indentation
 Plugin 'confluencewiki.vim'
 Plugin 'scrooloose/nerdcommenter'
@@ -70,7 +70,6 @@ Plugin 'scrooloose/nerdcommenter'
 " Python
 Plugin 'bps/vim-textobj-python'
 Plugin 'heavenshell/vim-pydocstring'
-Plugin 'python-mode/python-mode'
 
 
 Plugin 'tpope/vim-unimpaired'
@@ -99,6 +98,9 @@ let g:tslime_always_current_window = 1
 vmap <C-c> <Plug>SendSelectionToTmux
 
 Plugin 'google/yapf'
+
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -228,6 +230,8 @@ vnoremap gj j
 
 " Autosave
 au FocusLost * :wa
+" Autosave when changing text, even if not leaving insert mode. 
+autocmd TextChanged,TextChangedI <buffer> silent! write
 
 " Escape from insert mode
 inoremap jk <ESC>
@@ -324,7 +328,7 @@ vmap H ^
 vmap L $
 
 " Waiting 1000ms before accepting keypresses like 'x' is hard to take.
-set timeoutlen=300
+set timeoutlen=400
 
 " I can't stand hitting q on accident and getting thrown into macro record
 " mode.
@@ -420,6 +424,9 @@ autocmd InsertEnter * highlight  CursorLine ctermbg=Black cterm=bold
 autocmd InsertLeave * highlight  CursorLine ctermbg=None cterm=none
 
 highlight Comment cterm=italic
+
+" No colored background in the gutter
+highlight SignColumn ctermbg=none
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Static Analysis
