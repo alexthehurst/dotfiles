@@ -14,8 +14,6 @@ alias ln="ln --interactive --symbolic"  # I almost never want to create a hardli
 # Create a new directory and enter it
 function mkd() { mkdir -p "$@" && cd "$@"; }
 
-# git
-alias g="git"
 
 # vim, duh
 alias v="vim"

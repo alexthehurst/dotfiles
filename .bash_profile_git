@@ -14,6 +14,8 @@ function work_in_progress() {
 alias gwip='git add --all; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --message='--wip--""
 alias gunwip='git log --max-count=1 | grep --quiet --count "\-\-wip\-\-" && git reset HEAD~1'
 
-. ~/dotfiles/git_completion.bash
+# git
+alias g="git"
 
-alias gpo="git push && git open"
+# make expansion work with git alias: https://stackoverflow.com/q/342969/3239078
+__git_complete g __git_main
