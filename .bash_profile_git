@@ -17,5 +17,7 @@ alias gunwip='git log --max-count=1 | grep --quiet --count "\-\-wip\-\-" && git 
 # git
 alias g="git"
 
+test -f git_completion.bash && . git_completion.bash
+
 # make expansion work with git alias: https://stackoverflow.com/q/342969/3239078
 __git_complete g __git_main
