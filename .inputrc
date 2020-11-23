@@ -14,7 +14,8 @@ set keymap vi-insert
 # For some reason, these need to come after `set -o vi`
 "\e[A": history-search-backward
 "\e[B": history-search-forward
-TAB: menu-complete
+
+# TAB: menu-complete
 # "\e[Z": menu-complete-backward
 
 # disregard case when doing completion
