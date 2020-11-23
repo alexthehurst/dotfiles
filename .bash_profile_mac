@@ -40,6 +40,14 @@ case "$HOSTNAME" in
             . `brew --prefix`/etc/bash_completion 
         fi
 
+
+        # https://kubernetes.io/docs/tasks/tools/install-kubectl/
+        export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+        [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+        # make kubectl expansion work with the alias: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+        complete -F __start_kubectl k
+
+
         # Makes virtualenvwrapper a little nicer to use
         alias workoff=deactivate  # The opposite of 'workon', heh
 
