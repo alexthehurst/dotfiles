@@ -65,9 +65,6 @@ update_git_prompt_parts() {
         # check if the current directory is in .git before running git checks
         elif [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
 
-            # Ensure the index is up to date.
-            # This is slow
-            git update-index --really-refresh -q &>/dev/null;
 
             # Check for uncommitted changes in the index.
             if ! $(git diff --quiet --cached); then
