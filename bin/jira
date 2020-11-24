@@ -1,7 +1,2 @@
 #!/bin/bash
-TICKET=$1
-if [ $# -eq 0 ]
-    then
-        TICKET=$(git -C "$PROJECT_DIR" symbolic-ref --quiet --short HEAD | cut -d '-' -f 1,2 | tr '[:lower:]' '[:upper:]')
-fi
-open "https://illuminate.atlassian.net/browse/$TICKET"
+open "https://illuminate.atlassian.net/browse/$(tkt $@)"
