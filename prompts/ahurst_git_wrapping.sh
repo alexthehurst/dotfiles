@@ -70,12 +70,12 @@ update_git_prompt_parts() {
             git update-index --really-refresh -q &>/dev/null;
 
             # Check for uncommitted changes in the index.
-            if ! $(git diff --quiet --ignore-submodules --cached); then
+            if ! $(git diff --quiet --cached); then
                 status+='+';
             fi;
 
             # Check for unstaged changes.
-            if ! $(git diff-files --quiet --ignore-submodules --); then
+            if ! $(git diff-files --quiet --); then
                 status+='!';
             fi;
 
