@@ -1,0 +1,10 @@
+#!/bin/bash
+# Alex Hurst 2020
+
+if [ $# -eq 0 ]
+  then
+      localbranch=$(git symbolic-ref --quiet --short HEAD)
+else
+    localbranch=$1
+fi
+echo $localbranch | cut -d '-' -f 1,2 | tr '[:lower:]' '[:upper:]'
